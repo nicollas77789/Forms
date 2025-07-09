@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus Recruit | Aplicação para Equipe de Segurança</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/animations.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap">
+</head>
+<body class="cyber-form-page">
+  <div class="cyber-form-loader" id="formLoader">
+    <div class="hexagon-loader">
+      <div class="hex hex-1"></div>
+      <div class="hex hex-2"></div>
+      <div class="hex hex-3"></div>
+    </div>
+    <div class="loader-status">CARREGANDO FORMULÁRIO DE SEGURANÇA...</div>
+  </div>
+
+  <div class="cyber-form-container hidden" id="formContainer">
+    <header class="form-header">
+      <h1 class="glitch" data-text="APLICAÇÃO DE SEGURANÇA">APLICAÇÃO DE SEGURANÇA</h1>
+      <div class="security-badge">
+        <span class="badge-icon">🛡️</span>
+        <span class="badge-text">NÍVEL 3 - CONFIDENCIAL</span>
+      </div>
+    </header>
+
+    <div class="form-stepper">
+      <div class="stepper-progress" id="stepperProgress"></div>
+      <div class="stepper-steps">
+        <div class="step active" data-step="1">IDENTIFICAÇÃO</div>
+        <div class="step" data-step="2">QUALIFICAÇÕES</div>
+        <div class="step" data-step="3">AVALIAÇÃO</div>
+        <div class="step" data-step="4">REVISÃO</div>
+      </div>
+    </div>
+
+    <form id="nexusStaffForm" class="cyber-form">
+      <!-- Passo 1: Identificação -->
+      <div class="form-step active" data-step="1">
+        <div class="cyber-input">
+          <label for="fullName">NOME COMPLETO</label>
+          <input type="text" id="fullName" name="fullName" required 
+                 data-parsley-pattern="/^[a-zA-ZÀ-ÿ ]+$/" 
+                 data-parsley-error-message="Caracteres inválidos detectados">
+          <div class="input-border"></div>
+        </div>
+
+        <div class="cyber-input">
+          <label for="discordTag">IDENTIFICADOR DISCORD</label>
+          <input type="text" id="discordTag" name="discordTag" required 
+                 placeholder="usuário#0000"
+                 data-parsley-pattern="/^.{3,32}#[0-9]{4}$/" 
+                 data-parsley-error-message="Formato inválido (exemplo: usuario#1234)">
+          <div class="input-border"></div>
+        </div>
+
+        <div class="cyber-input">
+          <label for="age">IDADE CRONOLÓGICA</label>
+          <input type="number" id="age" name="age" min="16" max="99" required>
+          <div class="input-border"></div>
+        </div>
+
+        <div class="form-navigation">
+          <button type="button" class="cyber-button next-step" data-next="2">
+            <span class="btn-text">PRÓXIMA FASE</span>
+            <span class="btn-glow"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Passo 2: Qualificações -->
+      <div class="form-step" data-step="2">
+        <div class="cyber-select">
+          <label for="position">CARGO DESEJADO</label>
+          <select id="position" name="position" required>
+            <option value="">SELECIONE UM CARGO</option>
+            <option value="AGENTE">Agente de Moderação</option>
+            <option value="ESPECIALISTA">Especialista em Conformidade</option>
+            <option value="SUPERVISOR">Supervisor de Equipe</option>
+            <option value="ADMINISTRADOR">Administrador de Sistemas</option>
+          </select>
+          <div class="select-arrow"></div>
+        </div>
+
+        <div class="cyber-textarea">
+          <label for="experience">EXPERIÊNCIA OPERACIONAL</label>
+          <textarea id="experience" name="experience" rows="5" required
+                    data-parsley-minlength="100"
+                    data-parsley-error-message="Descreva com mais detalhes (mínimo 100 caracteres)"></textarea>
+          <div class="textarea-border"></div>
+          <div class="char-counter"><span id="expCounter">0</span>/500</div>
+        </div>
+
+        <div class="cyber-checkbox-group">
+          <label>HABILIDADES TÉCNICAS</label>
+          <div class="checkbox-grid">
+            <div class="cyber-checkbox">
+              <input type="checkbox" id="skill1" name="skills[]" value="MODERAÇÃO">
+              <label for="skill1">MODERAÇÃO AVANÇADA</label>
+              <div class="checkmark"></div>
+            </div>
+            <div class="cyber-checkbox">
+              <input type="checkbox" id="skill2" name="skills[]" value="CONFLITOS">
+              <label for="skill2">RESOLUÇÃO DE CONFLITOS</label>
+              <div class="checkmark"></div>
+            </div>
+            <div class="cyber-checkbox">
+              <input type="checkbox" id="skill3" name="skills[]" value="BOTS">
+              <label for="skill3">GERENCIAMENTO DE BOTS</label>
+              <div class="checkmark"></div>
+            </div>
+            <div class="cyber-checkbox">
+              <input type="checkbox" id="skill4" name="skills[]" value="EVENTOS">
+              <label for="skill4">ORGANIZAÇÃO DE EVENTOS</label>
+              <div class="checkmark"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-navigation">
+          <button type="button" class="cyber-button prev-step" data-prev="1">
+            <span class="btn-text">FASE ANTERIOR</span>
+            <span class="btn-glow"></span>
+          </button>
+          <button type="button" class="cyber-button next-step" data-next="3">
+            <span class="btn-text">PRÓXIMA FASE</span>
+            <span class="btn-glow"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Passo 3: Avaliação -->
+      <div class="form-step" data-step="3">
+        <div class="scenario-test">
+          <h3>TESTE DE CENÁRIO #1</h3>
+          <p>Um usuário está violando repetidamente as regras do servidor. Após ser advertido, ele começa a enviar mensagens privadas para outros membros com conteúdo ofensivo. Como você lidaria com esta situação?</p>
+          
+          <div class="cyber-textarea">
+            <textarea id="scenario1" name="scenario1" rows="4" required></textarea>
+            <div class="textarea-border"></div>
+          </div>
+        </div>
+
+        <div class="scenario-test">
+          <h3>TESTE DE CENÁRIO #2</h3>
+          <p>Você descobre que um colega da equipe está abusando de suas permissões para beneficiar amigos. Qual seria sua abordagem para resolver esta situação delicada?</p>
+          
+          <div class="cyber-textarea">
+            <textarea id="scenario2" name="scenario2" rows="4" required></textarea>
+            <div class="textarea-border"></div>
+          </div>
+        </div>
+
+        <div class="availability-selector">
+          <h3>DISPONIBILIDADE OPERACIONAL</h3>
+          <div class="time-slots">
+            <div class="cyber-radio">
+              <input type="radio" id="time1" name="availability" value="5-10" required>
+              <label for="time1">5-10 HORAS/SEMANA</label>
+              <div class="radiomark"></div>
+            </div>
+            <div class="cyber-radio">
+              <input type="radio" id="time2" name="availability" value="10-20">
+              <label for="time2">10-20 HORAS/SEMANA</label>
+              <div class="radiomark"></div>
+            </div>
+            <div class="cyber-radio">
+              <input type="radio" id="time3" name="availability" value="20+">
+              <label for="time3">20+ HORAS/SEMANA</label>
+              <div class="radiomark"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-navigation">
+          <button type="button" class="cyber-button prev-step" data-prev="2">
+            <span class="btn-text">FASE ANTERIOR</span>
+            <span class="btn-glow"></span>
+          </button>
+          <button type="button" class="cyber-button next-step" data-next="4">
+            <span class="btn-text">PRÓXIMA FASE</span>
+            <span class="btn-glow"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Passo 4: Revisão -->
+      <div class="form-step" data-step="4">
+        <div class="review-summary">
+          <h3>REVISÃO DE DADOS</h3>
+          <div class="summary-grid">
+            <div class="summary-item">
+              <span class="summary-label">NOME:</span>
+              <span class="summary-value" id="reviewName">-</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">DISCORD:</span>
+              <span class="summary-value" id="reviewDiscord">-</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">CARGO:</span>
+              <span class="summary-value" id="reviewPosition">-</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">HABILIDADES:</span>
+              <span class="summary-value" id="reviewSkills">-</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">DISPONIBILIDADE:</span>
+              <span class="summary-value" id="reviewAvailability">-</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cyber-checkbox">
+          <input type="checkbox" id="consent" name="consent" required>
+          <label for="consent">DECLARO QUE TODAS AS INFORMAÇÕES FORNECIDAS SÃO VERDADEIRAS E CONCORDO COM A ANÁLISE DE MEUS DADOS PARA FINS DE RECRUTAMENTO</label>
+          <div class="checkmark"></div>
+        </div>
+
+        <div class="form-navigation">
+          <button type="button" class="cyber-button prev-step" data-prev="3">
+            <span class="btn-text">FASE ANTERIOR</span>
+            <span class="btn-glow"></span>
+          </button>
+          <button type="submit" class="cyber-button submit-form">
+            <span class="btn-text">ENVIAR PARA ANÁLISE</span>
+            <span class="btn-glow"></span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="cyber-modal hidden" id="submitModal">
+    <div class="modal-content" data-augmented-ui="tl-clip tr-clip br-clip bl-clip border">
+      <div class="modal-header">
+        <h3>TRANSMISSÃO DE DADOS</h3>
+        <div class="modal-close" id="modalClose">&times;</div>
+      </div>
+      <div class="modal-body">
+        <div class="upload-progress">
+          <div class="progress-bar" id="uploadBar"></div>
+          <div class="progress-text" id="progressText">0%</div>
+        </div>
+        <div class="upload-status" id="uploadStatus">PREPARANDO TRANSMISSÃO...</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../assets/js/core.js"></script>
+  <script src="../../assets/js/analytics.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"></script>
+  <script>
+    // Controle do formulário avançado
+    document.addEventListener('DOMContentLoaded', () => {
+      initFormStepper();
+      setupCharacterCounters();
+      loadReviewData();
+      setupFormValidation();
+    });
+
+    // Simulação de upload
+    document.getElementById('nexusStaffForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      simulateSubmission();
+    });
+  </script>
+</body>
+</html>

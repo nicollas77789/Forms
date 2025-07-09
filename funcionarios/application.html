@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus Recruit | Aplicação para Unidade Operacional</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/animations.css">
+  <link rel="stylesheet" href="../../assets/css/forms.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap">
+</head>
+<body class="cyber-form-page">
+  <div class="cyber-form-loader" id="formLoader">
+    <div class="hexagon-loader">
+      <div class="hex hex-1"></div>
+      <div class="hex hex-2"></div>
+      <div class="hex hex-3"></div>
+    </div>
+    <div class="loader-status">INICIALIZANDO FORMULÁRIO OPERACIONAL...</div>
+  </div>
+
+  <div class="cyber-form-container hidden" id="formContainer">
+    <header class="form-header">
+      <h1 class="glitch" data-text="APLICAÇÃO OPERACIONAL">APLICAÇÃO OPERACIONAL</h1>
+      <div class="security-badge">
+        <span class="badge-icon">💼</span>
+        <span class="badge-text">NÍVEL 2 - RESTRITO</span>
+      </div>
+    </header>
+
+    <div class="form-stepper">
+      <div class="stepper-progress" id="stepperProgress"></div>
+      <div class="stepper-steps">
+        <div class="step active" data-step="1">IDENTIFICAÇÃO</div>
+        <div class="step" data-step="2">COMPETÊNCIAS</div>
+        <div class="step" data-step="3">CENÁRIOS</div>
+        <div class="step" data-step="4">CONFIRMAÇÃO</div>
+      </div>
+    </div>
+
+    <form id="nexusEmployeeForm" class="cyber-form">
+      <!-- Passo 1: Identificação -->
+      <div class="form-step active" data-step="1">
+        <div class="cyber-input">
+          <label for="fullName">NOME COMPLETO</label>
+          <input type="text" id="fullName" name="fullName" required 
+                 data-parsley-pattern="/^[a-zA-ZÀ-ÿ ]+$/" 
+                 data-parsley-error-message="Caracteres inválidos detectados">
+          <div class="input-border"></div>
+        </div>
+
+        <div class="cyber-input">
+          <label for="discordTag">IDENTIFICADOR DISCORD</label>
+          <input type="text" id="discordTag" name="discordTag" required 
+                 placeholder="usuário#0000"
+                 data-parsley-pattern="/^.{3,32}#[0-9]{4}$/" 
+                 data-parsley-error-message="Formato inválido (exemplo: usuario#1234)">
+          <div class="input-border"></div>
+        </div>
+
+        <div class="cyber-select">
+          <label for="department">DEPARTAMENTO ALVO</label>
+          <select id="department" name="department" required>
+            <option value="">SELECIONE UM DEPARTAMENTO</option>
+            <option value="ATENDIMENTO">Atendimento ao Cliente</option>
+            <option value="VENDAS">Vendas e Negociações</option>
+            <option value="SUPORTE">Suporte Técnico</option>
+            <option value="RECURSOS">Recursos Humanos</option>
+          </select>
+          <div class="select-arrow"></div>
+        </div>
+
+        <div class="form-navigation">
+          <button type="button" class="cyber-button next-step" data-next="2">
+            <span class="btn-text">PRÓXIMA FASE</span>
+            <span class="btn-glow"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Passo 2: Competências -->
+      <div class="form-step" data-step="2">
+        <div class="cyber-textarea">
+          <label for="professionalExperience">EXPERIÊNCIA PROFISSIONAL</label>
+          <textarea id="professionalExperience" name="professionalExperience" rows="5" required
+                    data-parsley-minlength="150"
+                    data-parsley-error-message="Descreva com mais detalhes (mínimo 150 caracteres)"></textarea>
+          <div class="textarea-border"></div>
+          <div class="char-counter"><span id="expCounter">0</span>/600</div>
+        </div>
+
+        <div class="cyber-textarea">
+          <label for="qualities">QUALIDADES RELEVANTES</label>
+          <textarea id="qualities" name="qualities" rows="5" required
+                    data-parsley-minlength="100"
+                    data-parsley-error-message="Descreva com mais detalhes (mínimo 100 caracteres)"></textarea>
+          <div class="textarea-border"></div>
+          <div class="char-counter"><span id="qualitiesCounter">0</span>/400</div>
+        </div>
+
+        <div class="cyber-checkbox-group">
+          <label>HABILIDADES TÉCNICAS</label>
+          <div class="checkbox-grid">
+            <div class="cyber-checkbox">
+              <input type="checkbox" id="skillComunication" name="skills[]" value="COMUNICAÇÃO">
+              <label for="skillComunication">COMUNICAÇÃO CLARA</label>
+              <div class="checkmark"></div>
+            </div>
+            <div class="cyber-checkbox">
+              <input type="checkbox" id="skillNegotiation" name="skills[]" value="NEGOCIAÇÃO">
+              <label for="skillNegotiation">NEGOCIAÇÃO</label>
+              <div class="checkmark"></div>
+            </div>
+            <div class="cyber-checkbox">
+              <input type="checkbox" id="skillCRM" name="skills[]" value="CRM">
+              <label for="skillCRM">CONHECIMENTO EM CRM</label>
+              <div class="checkmark"></div>
+            </div>
+            <div class="cyber-checkbox">
+              <input type="checkbox" id="skillLanguages" name="skills[]" value="IDIOMAS">
+              <label for="skillLanguages">IDIOMAS ESTRANGEIROS</label>
+              <div class="checkmark"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-navigation">
+          <button type="button" class="cyber-button prev-step" data-prev="1">
+            <span class="btn-text">FASE ANTERIOR</span>
+            <span class="btn-glow"></span>
+          </button>
+          <button type="button" class="cyber-button next-step" data-next="3">
+            <span class="btn-text">PRÓXIMA FASE</span>
+            <span class="btn-glow"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Passo 3: Cenários -->
+      <div class="form-step" data-step="3">
+        <div class="scenario-test">
+          <h3>CENÁRIO OPERACIONAL #1</h3>
+          <p>Um cliente está insatisfeito com um produto/serviço e exige uma solução imediata, ameaçando levar o caso para as redes sociais. Como você lidaria com esta situação?</p>
+          
+          <div class="cyber-textarea">
+            <textarea id="scenario1" name="scenario1" rows="4" required></textarea>
+            <div class="textarea-border"></div>
+          </div>
+        </div>
+
+        <div class="scenario-test">
+          <h3>CENÁRIO OPERACIONAL #2</h3>
+          <p>Você percebe que um colega está registrando incorretamente as vendas para atingir metas. Qual seria sua ação?</p>
+          
+          <div class="cyber-textarea">
+            <textarea id="scenario2" name="scenario2" rows="4" required></textarea>
+            <div class="textarea-border"></div>
+          </div>
+        </div>
+
+        <div class="availability-selector">
+          <h3>DISPONIBILIDADE OPERACIONAL</h3>
+          <div class="time-slots">
+            <div class="cyber-radio">
+              <input type="radio" id="time4" name="availability" value="20-30" required>
+              <label for="time4">20-30 HORAS/SEMANA</label>
+              <div class="radiomark"></div>
+            </div>
+            <div class="cyber-radio">
+              <input type="radio" id="time5" name="availability" value="30-40">
+              <label for="time5">30-40 HORAS/SEMANA</label>
+              <div class="radiomark"></div>
+            </div>
+            <div class="cyber-radio">
+              <input type="radio" id="time6" name="availability" value="40+">
+              <label for="time6">40+ HORAS/SEMANA</label>
+              <div class="radiomark"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-navigation">
+          <button type="button" class="cyber-button prev-step" data-prev="2">
+            <span class="btn-text">FASE ANTERIOR</span>
+            <span class="btn-glow"></span>
+          </button>
+          <button type="button" class="cyber-button next-step" data-next="4">
+            <span class="btn-text">PRÓXIMA FASE</span>
+            <span class="btn-glow"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Passo 4: Confirmação -->
+      <div class="form-step" data-step="4">
+        <div class="review-summary">
+          <h3>CONFIRMAÇÃO DE DADOS</h3>
+          <div class="summary-grid">
+            <div class="summary-item">
+              <span class="summary-label">NOME:</span>
+              <span class="summary-value" id="reviewName">-</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">DISCORD:</span>
+              <span class="summary-value" id="reviewDiscord">-</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">DEPARTAMENTO:</span>
+              <span class="summary-value" id="reviewDepartment">-</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">HABILIDADES:</span>
+              <span class="summary-value" id="reviewSkills">-</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">DISPONIBILIDADE:</span>
+              <span class="summary-value" id="reviewAvailability">-</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cyber-checkbox">
+          <input type="checkbox" id="consent" name="consent" required>
+          <label for="consent">DECLARO VERDADEIRAS TODAS AS INFORMAÇÕES E AUTORIZO A VERIFICAÇÃO DOS DADOS</label>
+          <div class="checkmark"></div>
+        </div>
+
+        <div class="form-navigation">
+          <button type="button" class="cyber-button prev-step" data-prev="3">
+            <span class="btn-text">FASE ANTERIOR</span>
+            <span class="btn-glow"></span>
+          </button>
+          <button type="submit" class="cyber-button submit-form">
+            <span class="btn-text">TRANSMITIR APLICAÇÃO</span>
+            <span class="btn-glow"></span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="cyber-modal hidden" id="submitModal">
+    <div class="modal-content" data-augmented-ui="tl-clip tr-clip br-clip bl-clip border">
+      <div class="modal-header">
+        <h3>TRANSMISSÃO DE DADOS</h3>
+        <div class="modal-close" id="modalClose">&times;</div>
+      </div>
+      <div class="modal-body">
+        <div class="upload-progress">
+          <div class="progress-bar" id="uploadBar"></div>
+          <div class="progress-text" id="progressText">0%</div>
+        </div>
+        <div class="upload-status" id="uploadStatus">INICIANDO PROTOCOLO DE TRANSMISSÃO...</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../assets/js/core.js"></script>
+  <script src="../../assets/js/analytics.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initFormStepper();
+      setupCharacterCounters();
+      loadReviewData();
+      setupFormValidation('nexusEmployeeForm');
+    });
+
+    document.getElementById('nexusEmployeeForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = {
+        tipo: 'Funcionário',
+        nome: document.getElementById('fullName').value,
+        discord: document.getElementById('discordTag').value,
+        area: document.getElementById('department').value,
+        experiencia: document.getElementById('professionalExperience').value,
+        qualidades: document.getElementById('qualities').value,
+        habilidades: Array.from(document.querySelectorAll('input[name="skills[]"]:checked')).map(el => el.value).join(', '),
+        disponibilidade: document.querySelector('input[name="availability"]:checked')?.value,
+        cenarios: {
+          cenario1: document.getElementById('scenario1').value,
+          cenario2: document.getElementById('scenario2').value
+        }
+      };
+      
+      simulateSubmission()
+        .then(() => enviarParaDiscord(formData))
+        .then(() => {
+          setTimeout(() => {
+            window.location.href = "../../index.html";
+          }, 2000);
+        });
+    });
+
+    function loadReviewData() {
+      const form = document.getElementById('nexusEmployeeForm');
+      
+      form.addEventListener('input', () => {
+        document.getElementById('reviewName').textContent = 
+          document.getElementById('fullName').value || '-';
+        
+        document.getElementById('reviewDiscord').textContent = 
+          document.getElementById('discordTag').value || '-';
+        
+        document.getElementById('reviewDepartment').textContent = 
+          document.getElementById('department').value || '-';
+        
+        const skills = Array.from(document.querySelectorAll('input[name="skills[]"]:checked'))
+          .map(skill => skill.value)
+          .join(', ');
+        document.getElementById('reviewSkills').textContent = skills || '-';
+        
+        const availability = document.querySelector('input[name="availability"]:checked');
+        document.getElementById('reviewAvailability').textContent = 
+          availability ? availability.value : '-';
+      });
+    }
+  </script>
+</body>
+</html>

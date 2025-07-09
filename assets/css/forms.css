@@ -1,0 +1,131 @@
+/* Estilos específicos para formulários */
+.cyber-form-page {
+  background: radial-gradient(ellipse at center, #0a0a14 0%, #05050a 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.cyber-form-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(10, 10, 20, 0.7);
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-form-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 240, 255, 0.05) 0%,
+    rgba(0, 240, 255, 0) 20%,
+    rgba(0, 240, 255, 0) 80%,
+    rgba(0, 240, 255, 0.05) 100%
+  );
+  pointer-events: none;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.form-header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  letter-spacing: 3px;
+}
+
+/* Efeito de scanner */
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.scanline-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 240, 255, 0) 0%,
+    rgba(0, 240, 255, 0.1) 50%,
+    rgba(0, 240, 255, 0) 100%
+  );
+  animation: scanline 8s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Estilos para cenários de teste */
+.scenario-test, .creative-test {
+  background: rgba(5, 5, 15, 0.5);
+  border: 1px solid var(--primary);
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.scenario-test h3, .creative-test h3 {
+  color: var(--accent);
+  margin-bottom: 15px;
+  font-family: var(--font-display);
+  letter-spacing: 1px;
+}
+
+.scenario-test p, .creative-test p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.test-instructions {
+  margin: 15px 0;
+  padding-left: 20px;
+}
+
+.test-instructions li {
+  margin-bottom: 8px;
+}
+
+/* Adaptações para mobile */
+@media (max-width: 768px) {
+  .cyber-form-container {
+    padding: 20px 15px;
+  }
+  
+  .form-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .checkbox-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .scenario-test, .creative-test {
+    padding: 15px;
+  }
+}
+
+/* Efeito de digitação para textos longos */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+.typewriter-text {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end);
+}

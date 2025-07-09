@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus Recruit | Sistema de Recrutamento Avançado</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap">
+</head>
+<body>
+  <div class="cyber-loader" id="cyberLoader">
+    <div class="loader-grid">
+      <div class="grid-cell"></div>
+      <div class="grid-cell"></div>
+      <div class="grid-cell"></div>
+      <div class="grid-cell"></div>
+    </div>
+    <div class="loader-text">INICIALIZANDO SISTEMA NEXUS RECRUIT</div>
+    <div class="loader-progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+  </div>
+
+  <main class="cyber-main hidden" id="mainContent">
+    <header class="cyber-header">
+      <div class="header-glitch" data-text="NEXUS RECRUIT">NEXUS RECRUIT</div>
+      <p class="subtitle">Sistema de Recrutamento de Elite v4.2</p>
+    </header>
+
+    <div class="cyber-grid">
+      <div class="cyber-card staff-card" data-augmented-ui="tl-clip tr-clip br-clip bl-clip border">
+        <div class="card-content">
+          <div class="card-icon">🛡️</div>
+          <h2 class="card-title">Equipe de Segurança</h2>
+          <p class="card-desc">Moderação avançada e gestão de comunidade</p>
+          <div class="cyber-button" onclick="navigateTo('staff/application')">
+            <span class="btn-text">ACESSAR TERMINAL</span>
+            <span class="btn-glow"></span>
+          </div>
+        </div>
+        <div class="card-particles" id="particles-1"></div>
+      </div>
+
+      <div class="cyber-card employee-card" data-augmented-ui="tl-clip tr-clip br-clip bl-clip border">
+        <div class="card-content">
+          <div class="card-icon">💼</div>
+          <h2 class="card-title">Unidade Operacional</h2>
+          <p class="card-desc">Atendimento especializado e gestão de vendas</p>
+          <div class="cyber-button" onclick="navigateTo('funcionarios/application')">
+            <span class="btn-text">ACESSAR TERMINAL</span>
+            <span class="btn-glow"></span>
+          </div>
+        </div>
+        <div class="card-particles" id="particles-2"></div>
+      </div>
+
+      <div class="cyber-card design-card" data-augmented-ui="tl-clip tr-clip br-clip bl-clip border">
+        <div class="card-content">
+          <div class="card-icon">🎨</div>
+          <h2 class="card-title">Divisão Criativa</h2>
+          <p class="card-desc">Design de elite e produção multimídia</p>
+          <div class="cyber-button" onclick="navigateTo('design/application')">
+            <span class="btn-text">ACESSAR TERMINAL</span>
+            <span class="btn-glow"></span>
+          </div>
+        </div>
+        <div class="card-particles" id="particles-3"></div>
+      </div>
+    </div>
+
+    <div class="cyber-terminal">
+      <div class="terminal-header">
+        <span class="terminal-title">SISTEMA DE MONITORAMENTO</span>
+        <div class="terminal-controls">
+          <span class="control-dot red"></span>
+          <span class="control-dot yellow"></span>
+          <span class="control-dot green"></span>
+        </div>
+      </div>
+      <div class="terminal-content" id="systemTerminal">
+        <p>> Inicializando módulos de segurança...</p>
+        <p>> Verificando credenciais de acesso...</p>
+        <p>> Conexão segura estabelecida...</p>
+        <p>> Bem-vindo(a) ao Nexus Recruit System</p>
+      </div>
+    </div>
+  </main>
+
+  <div class="cyber-alerts" id="systemAlerts"></div>
+
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/analytics.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    // Inicialização do sistema
+    document.addEventListener('DOMContentLoaded', () => {
+      initSystem();
+      startParticles();
+      loadUserData();
+    });
+  </script>
+</body>
+</html>

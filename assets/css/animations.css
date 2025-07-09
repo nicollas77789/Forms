@@ -1,0 +1,129 @@
+/* Animações personalizadas */
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 5px rgba(0, 240, 255, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(0, 240, 255, 0.8); }
+  100% { box-shadow: 0 0 5px rgba(0, 240, 255, 0.5); }
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+  }
+  20%, 22%, 24%, 55% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes hologram {
+  0% { transform: translateY(0) rotate(0); opacity: 0.8; }
+  20% { transform: translateY(-5px) rotate(1deg); opacity: 0.9; }
+  40% { transform: translateY(5px) rotate(-1deg); opacity: 0.7; }
+  60% { transform: translateY(-3px) rotate(0.5deg); opacity: 0.9; }
+  80% { transform: translateY(3px) rotate(-0.5deg); opacity: 0.7; }
+  100% { transform: translateY(0) rotate(0); opacity: 0.8; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Aplicação das animações */
+.pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+.flicker {
+  animation: flicker 3s infinite;
+}
+
+.hologram-effect {
+  animation: hologram 6s ease-in-out infinite;
+}
+
+.float-effect {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Efeito de distorção para erro */
+@keyframes distort {
+  0% { transform: skew(0deg, 0deg); }
+  20% { transform: skew(5deg, 5deg); }
+  40% { transform: skew(-5deg, -5deg); }
+  60% { transform: skew(3deg, 3deg); }
+  80% { transform: skew(-3deg, -3deg); }
+  100% { transform: skew(0deg, 0deg); }
+}
+
+.error-distort {
+  animation: distort 0.5s ease;
+}
+
+/* Efeito de conexão */
+@keyframes connect {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.connecting {
+  background: linear-gradient(270deg, #00f0ff, #ff2d75, #f0e800);
+  background-size: 600% 600%;
+  animation: connect 3s ease infinite;
+}
+
+/* Efeito de digitalização */
+@keyframes digital-scan {
+  0% { height: 0; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { height: 100%; opacity: 0; }
+}
+
+.digital-scan::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: rgba(0, 240, 255, 0.3);
+  animation: digital-scan 2s linear infinite;
+}
+
+/* Efeito de inicialização de sistema */
+@keyframes boot-sequence {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.boot-step {
+  opacity: 0;
+  animation: boot-sequence 0.5s forwards;
+}
+
+.boot-step:nth-child(1) { animation-delay: 0.5s; }
+.boot-step:nth-child(2) { animation-delay: 1s; }
+.boot-step:nth-child(3) { animation-delay: 1.5s; }
+.boot-step:nth-child(4) { animation-delay: 2s; }
+.boot-step:nth-child(5) { animation-delay: 2.5s; }
+
+/* Efeito de transição entre telas */
+.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
