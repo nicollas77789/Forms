@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nexus Recruit | Aplicação Staff</title>
+  <title>Nexus Recruit | Aplicação Design/Divulgação</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -480,7 +480,7 @@
 <body>
   <!-- Header do Formulário -->
   <div class="form-header">
-    <h1>🛡️ APLICAÇÃO DE STAFF</h1>
+    <h1>🎨 APLICAÇÃO DE DESIGN/DIVULGAÇÃO</h1>
   </div>
 
   <!-- Container Principal -->
@@ -513,177 +513,137 @@
       </div>
     </div>
 
-    <!-- Seção 2: Cargo e Disponibilidade -->
+    <!-- Seção 2: Habilidades e Especialidades -->
     <div class="cyber-card">
       <div class="card-header">
-        <h2>CARGO E DISPONIBILIDADE</h2>
+        <h2>HABILIDADES</h2>
+        <div class="card-icon">🛠️</div>
+      </div>
+
+      <div class="cyber-checkbox-group">
+        <label>QUAL SUA ESPECIALIDADE?</label>
+        <div class="checkbox-grid">
+          <div class="cyber-checkbox">
+            <input type="checkbox" id="skill1" name="skills[]" value="FOTO">
+            <label for="skill1">EDIÇÃO DE FOTOS</label>
+            <div class="checkmark"></div>
+          </div>
+          <div class="cyber-checkbox">
+            <input type="checkbox" id="skill2" name="skills[]" value="VIDEO">
+            <label for="skill2">EDIÇÃO DE VÍDEOS</label>
+            <div class="checkmark"></div>
+          </div>
+          <div class="cyber-checkbox">
+            <input type="checkbox" id="skill3" name="skills[]" value="BOTS">
+            <label for="skill3">CONFIGURAÇÃO DE BOTS</label>
+            <div class="checkmark"></div>
+          </div>
+          <div class="cyber-checkbox">
+            <input type="checkbox" id="skill4" name="skills[]" value="SOCIAL">
+            <label for="skill4">GERENCIAMENTO DE REDES</label>
+            <div class="checkmark"></div>
+          </div>
+          <div class="cyber-checkbox">
+            <input type="checkbox" id="skill5" name="skills[]" value="DESIGN">
+            <label for="skill5">DESIGN GRÁFICO</label>
+            <div class="checkmark"></div>
+          </div>
+          <div class="cyber-checkbox">
+            <input type="checkbox" id="skill6" name="skills[]" value="STREAM">
+            <label for="skill6">OVERLAYS PARA STREAM</label>
+            <div class="checkmark"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cyber-textarea">
+        <label for="experience">EXPERIÊNCIA ANTERIOR (Onde já trabalhou, projetos relevantes)</label>
+        <textarea id="experience" name="experience" rows="4" required></textarea>
+        <div class="char-counter"><span id="expCounter">0</span>/500</div>
+      </div>
+
+      <div class="cyber-textarea">
+        <label for="portfolio">LINK PARA PORTFÓLIO (Opcional)</label>
+        <textarea id="portfolio" name="portfolio" rows="2" placeholder="Links para seus trabalhos anteriores"></textarea>
+      </div>
+    </div>
+
+    <!-- Seção 3: Ferramentas e Disponibilidade -->
+    <div class="cyber-card">
+      <div class="card-header">
+        <h2>FERRAMENTAS E DISPONIBILIDADE</h2>
         <div class="card-icon">⏱️</div>
       </div>
 
-      <div class="cyber-select">
-        <label for="position">CARGO DESEJADO</label>
-        <select id="position" name="position" required>
-          <option value="">SELECIONE...</option>
-          <option value="MODERADOR">Moderador</option>
-          <option value="ADMINISTRADOR">Administrador</option>
-          <option value="SUPORTE">Suporte Técnico</option>
-          <option value="DESENVOLVEDOR">Desenvolvedor</option>
-          <option value="COMUNITY">Gerente de Comunidade</option>
-        </select>
-        <div class="select-arrow"></div>
-      </div>
-
-      <div class="cyber-textarea">
-        <label for="whyPosition">POR QUE VOCÊ QUER ESTE CARGO?</label>
-        <textarea id="whyPosition" name="whyPosition" rows="4" required></textarea>
-        <div class="char-counter"><span id="whyCounter">0</span>/500</div>
-      </div>
-
       <div class="cyber-checkbox-group">
-        <label>DISPONIBILIDADE (HORAS POR SEMANA)</label>
+        <label>QUAIS FERRAMENTAS VOCÊ DOMINA?</label>
         <div class="checkbox-grid">
           <div class="cyber-checkbox">
-            <input type="checkbox" id="availability1" name="availability[]" value="1-5">
-            <label for="availability1">1-5 HORAS</label>
+            <input type="checkbox" id="tool1" name="tools[]" value="PHOTOSHOP">
+            <label for="tool1">PHOTOSHOP</label>
             <div class="checkmark"></div>
           </div>
           <div class="cyber-checkbox">
-            <input type="checkbox" id="availability2" name="availability[]" value="5-10">
-            <label for="availability2">5-10 HORAS</label>
+            <input type="checkbox" id="tool2" name="tools[]" value="PREMIERE">
+            <label for="tool2">PREMIERE</label>
             <div class="checkmark"></div>
           </div>
           <div class="cyber-checkbox">
-            <input type="checkbox" id="availability3" name="availability[]" value="10-15">
-            <label for="availability3">10-15 HORAS</label>
+            <input type="checkbox" id="tool3" name="tools[]" value="AFTER">
+            <label for="tool3">AFTER EFFECTS</label>
             <div class="checkmark"></div>
           </div>
           <div class="cyber-checkbox">
-            <input type="checkbox" id="availability4" name="availability[]" value="15+">
-            <label for="availability4">15+ HORAS</label>
+            <input type="checkbox" id="tool4" name="tools[]" value="ILLUSTRATOR">
+            <label for="tool4">ILLUSTRATOR</label>
+            <div class="checkmark"></div>
+          </div>
+          <div class="cyber-checkbox">
+            <input type="checkbox" id="tool5" name="tools[]" value="DISCORD">
+            <label for="tool5">DISCORD BOTS</label>
+            <div class="checkmark"></div>
+          </div>
+          <div class="cyber-checkbox">
+            <input type="checkbox" id="tool6" name="tools[]" value="FIGMA">
+            <label for="tool6">FIGMA/CANVA</label>
             <div class="checkmark"></div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Seção 3: Experiência e Habilidades -->
-    <div class="cyber-card">
-      <div class="card-header">
-        <h2>EXPERIÊNCIA E HABILIDADES</h2>
-        <div class="card-icon">💼</div>
+      <div class="cyber-input">
+        <label for="hoursWeek">HORAS DISPONÍVEIS POR SEMANA</label>
+        <input type="number" id="hoursWeek" name="hoursWeek" min="5" max="40" required>
       </div>
 
       <div class="cyber-textarea">
-        <label for="experience">EXPERIÊNCIA ANTERIOR EM STAFF (Servidores, cargos, responsabilidades)</label>
-        <textarea id="experience" name="experience" rows="5" required></textarea>
-        <div class="char-counter"><span id="expCounter">0</span>/1000</div>
-      </div>
-
-      <div class="cyber-textarea">
-        <label for="skills">HABILIDADES RELEVANTES (O que você sabe fazer que seria útil para a equipe?)</label>
-        <textarea id="skills" name="skills" rows="4" required></textarea>
-        <div class="char-counter"><span id="skillsCounter">0</span>/500</div>
-      </div>
-
-      <div class="cyber-checkbox-group">
-        <label>FERRAMENTAS QUE VOCÊ DOMINA</label>
-        <div class="checkbox-grid">
-          <div class="cyber-checkbox">
-            <input type="checkbox" id="tool1" name="tools[]" value="DISCORD">
-            <label for="tool1">DISCORD</label>
-            <div class="checkmark"></div>
-          </div>
-          <div class="cyber-checkbox">
-            <input type="checkbox" id="tool2" name="tools[]" value="BOTS">
-            <label for="tool2">BOTS</label>
-            <div class="checkmark"></div>
-          </div>
-          <div class="cyber-checkbox">
-            <input type="checkbox" id="tool3" name="tools[]" value="PHOTOSHOP">
-            <label for="tool3">PHOTOSHOP</label>
-            <div class="checkmark"></div>
-          </div>
-          <div class="cyber-checkbox">
-            <input type="checkbox" id="tool4" name="tools[]" value="EDIT_VIDEO">
-            <label for="tool4">EDIÇÃO DE VÍDEO</label>
-            <div class="checkmark"></div>
-          </div>
-          <div class="cyber-checkbox">
-            <input type="checkbox" id="tool5" name="tools[]" value="PROGRAMMING">
-            <label for="tool5">PROGRAMAÇÃO</label>
-            <div class="checkmark"></div>
-          </div>
-          <div class="cyber-checkbox">
-            <input type="checkbox" id="tool6" name="tools[]" value="WRITING">
-            <label for="tool6">ESCRITA CRIATIVA</label>
-            <div class="checkmark"></div>
-          </div>
-        </div>
+        <label for="whyYou">POR QUE VOCÊ SERIA UM BOM DESIGN/DIVULGADOR PARA NÓS?</label>
+        <textarea id="whyYou" name="whyYou" rows="4" required></textarea>
+        <div class="char-counter"><span id="whyCounter">0</span>/300</div>
       </div>
     </div>
 
-    <!-- Seção 4: Cenários e Situações -->
+    <!-- Seção 4: Teste Criativo -->
     <div class="expandable-section">
       <div class="section-header">
-        <h3>TESTE DE SITUAÇÕES (Clique para expandir)</h3>
+        <h3>TESTE CRIATIVO (Clique para expandir)</h3>
         <span class="toggle-icon">+</span>
       </div>
       <div class="section-content">
         <div class="cyber-textarea">
-          <label for="situation1">1. Um membro está constantemente quebrando as regras, mas é amigo de vários staffs. Como você lidaria?</label>
-          <textarea id="situation1" name="situation1" rows="4" required></textarea>
+          <label for="creative1">1. Descreva como você promoveria um novo evento do servidor</label>
+          <textarea id="creative1" name="creative1" rows="4" required></textarea>
         </div>
 
         <div class="cyber-textarea">
-          <label for="situation2">2. Você encontra um staff abusando de seus poderes. O que faz?</label>
-          <textarea id="situation2" name="situation2" rows="4" required></textarea>
+          <label for="creative2">2. Você recebeu um briefing vago para criar uma arte. Como procede?</label>
+          <textarea id="creative2" name="creative2" rows="4" required></textarea>
         </div>
 
         <div class="cyber-textarea">
-          <label for="situation3">3. Dois membros estão em um conflito sério no chat geral. Como você resolveria?</label>
-          <textarea id="situation3" name="situation3" rows="4" required></textarea>
+          <label for="creative3">3. Um bot está com problemas de performance. Como você diagnosticaria?</label>
+          <textarea id="creative3" name="creative3" rows="4" required></textarea>
         </div>
-      </div>
-    </div>
-
-    <!-- Seção 5: Sobre Você -->
-    <div class="cyber-card">
-      <div class="card-header">
-        <h2>SOBRE VOCÊ</h2>
-        <div class="card-icon">👤</div>
-      </div>
-
-      <div class="cyber-textarea">
-        <label for="aboutYou">FALE SOBRE VOCÊ (Hobbies, interesses, personalidade)</label>
-        <textarea id="aboutYou" name="aboutYou" rows="4" required></textarea>
-        <div class="char-counter"><span id="aboutCounter">0</span>/500</div>
-      </div>
-
-      <div class="cyber-textarea">
-        <label for="whyUs">POR QUE DEVEMOS ESCOLHER VOCÊ? (O que te diferencia?)</label>
-        <textarea id="whyUs" name="whyUs" rows="4" required></textarea>
-        <div class="char-counter"><span id="whyUsCounter">0</span>/500</div>
-      </div>
-
-      <div class="cyber-radio-group">
-        <label>VOCÊ JÁ FOI PUNIDO EM NOSSO SERVIDOR?</label>
-        <div class="radio-grid">
-          <div class="cyber-radio">
-            <input type="radio" id="punishedYes" name="punished" value="Sim" required>
-            <label for="punishedYes">SIM</label>
-            <div class="radiomark"></div>
-          </div>
-          <div class="cyber-radio">
-            <input type="radio" id="punishedNo" name="punished" value="Não">
-            <label for="punishedNo">NÃO</label>
-            <div class="radiomark"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="cyber-input" id="punishmentDetails" style="display: none;">
-        <label for="punishmentDetailsText">EXPLIQUE A SITUAÇÃO</label>
-        <input type="text" id="punishmentDetailsText" name="punishmentDetails">
       </div>
     </div>
 
@@ -722,33 +682,8 @@
       document.getElementById('expCounter').textContent = this.value.length;
     });
 
-    document.getElementById('skills').addEventListener('input', function() {
-      document.getElementById('skillsCounter').textContent = this.value.length;
-    });
-
-    document.getElementById('whyPosition').addEventListener('input', function() {
+    document.getElementById('whyYou').addEventListener('input', function() {
       document.getElementById('whyCounter').textContent = this.value.length;
-    });
-
-    document.getElementById('aboutYou').addEventListener('input', function() {
-      document.getElementById('aboutCounter').textContent = this.value.length;
-    });
-
-    document.getElementById('whyUs').addEventListener('input', function() {
-      document.getElementById('whyUsCounter').textContent = this.value.length;
-    });
-
-    // Mostrar/ocultar detalhes de punição
-    document.querySelectorAll('input[name="punished"]').forEach(radio => {
-      radio.addEventListener('change', function() {
-        const detailsField = document.getElementById('punishmentDetails');
-        detailsField.style.display = this.value === 'Sim' ? 'block' : 'none';
-        if (this.value === 'Sim') {
-          document.getElementById('punishmentDetailsText').required = true;
-        } else {
-          document.getElementById('punishmentDetailsText').required = false;
-        }
-      });
     });
 
     // Seções expansíveis
@@ -786,29 +721,24 @@
     // Função para enviar para o Discord
     async function sendToDiscord(formData, userInfo) {
       const embed = {
-        title: '📄 Nova Aplicação de Staff Recebida',
+        title: '🎨 Nova Aplicação de Design/Divulgação Recebida',
         color: 0x00f0ff,
         fields: [
           { name: '👤 Nome', value: formData.fullName || 'Não informado', inline: true },
           { name: '🎂 Idade', value: formData.age || 'Não informado', inline: true },
           { name: '💬 Discord', value: formData.discordTag || 'Não informado', inline: true },
           { name: '📧 E-mail', value: formData.email || 'Não informado', inline: true },
-          { name: '🛡️ Cargo Desejado', value: formData.position || 'Não informado' },
-          { name: '⏱️ Disponibilidade', value: formData.availability?.join(', ') || 'Não informado', inline: true },
-          { name: '🔧 Ferramentas', value: formData.tools?.join(', ') || 'Nenhuma', inline: true },
-          { name: '📌 Experiência Anterior', value: formData.experience?.substring(0, 1000) + (formData.experience?.length > 1000 ? '...' : '') || 'Não informado' },
-          { name: '🛠️ Habilidades', value: formData.skills?.substring(0, 500) + (formData.skills?.length > 500 ? '...' : '') || 'Não informado' },
-          { name: '❓ Por que este cargo?', value: formData.whyPosition?.substring(0, 500) + (formData.whyPosition?.length > 500 ? '...' : '') || 'Não informado' },
-          { name: '⚠️ Já foi punido?', value: formData.punished || 'Não informado', inline: true },
-          { name: '🔎 Detalhes da punição', value: formData.punishmentDetails || 'Não se aplica', inline: true },
-          { name: '🧩 Sobre você', value: formData.aboutYou?.substring(0, 500) + (formData.aboutYou?.length > 500 ? '...' : '') || 'Não informado' },
-          { name: '🌟 Por que você?', value: formData.whyUs?.substring(0, 500) + (formData.whyUs?.length > 500 ? '...' : '') || 'Não informado' },
-          { name: '🔄 Situação 1', value: formData.situation1?.substring(0, 500) + (formData.situation1?.length > 500 ? '...' : '') || 'Não respondido' },
-          { name: '🔄 Situação 2', value: formData.situation2?.substring(0, 500) + (formData.situation2?.length > 500 ? '...' : '') || 'Não respondido' },
-          { name: '🔄 Situação 3', value: formData.situation3?.substring(0, 500) + (formData.situation3?.length > 500 ? '...' : '') || 'Não respondido' },
+          { name: '🛠️ Especialidades', value: formData.skills?.join(', ') || 'Nenhuma' },
+          { name: '🧰 Ferramentas', value: formData.tools?.join(', ') || 'Nenhuma' },
+          { name: '⏳ Horas/Semana', value: formData.hoursWeek || 'Não informado', inline: true },
+          { name: '📌 Experiência', value: formData.experience?.substring(0, 500) + (formData.experience?.length > 500 ? '...' : '') || 'Não informado' },
+          { name: '🔗 Portfólio', value: formData.portfolio || 'Não informado', inline: true },
+          { name: '🌟 Por que você?', value: formData.whyYou?.substring(0, 300) + (formData.whyYou?.length > 300 ? '...' : '') || 'Não informado' },
+          { name: '🎨 Teste 1', value: formData.creative1?.substring(0, 500) + (formData.creative1?.length > 500 ? '...' : '') || 'Não respondido' },
+          { name: '🎨 Teste 2', value: formData.creative2?.substring(0, 500) + (formData.creative2?.length > 500 ? '...' : '') || 'Não respondido' },
+          { name: '🎨 Teste 3', value: formData.creative3?.substring(0, 500) + (formData.creative3?.length > 500 ? '...' : '') || 'Não respondido' },
           { name: '🌐 IP', value: userInfo.ip || 'Não disponível', inline: true },
-          { name: '🖥️ Dispositivo', value: userInfo.browser.platform || 'Não disponível', inline: true },
-          { name: '🖥️ Resolução', value: userInfo.browser.screen || 'Não disponível', inline: true }
+          { name: '🖥️ Dispositivo', value: userInfo.browser.platform || 'Não disponível', inline: true }
         ],
         timestamp: new Date().toISOString(),
         footer: { text: 'Nexus Recruit System • ' + new Date().toLocaleString() }
@@ -851,19 +781,15 @@
         age: document.getElementById('age').value,
         discordTag: document.getElementById('discordTag').value,
         email: document.getElementById('email').value,
-        position: document.getElementById('position').value,
-        whyPosition: document.getElementById('whyPosition').value,
-        availability: Array.from(document.querySelectorAll('input[name="availability[]"]:checked')).map(el => el.value),
-        experience: document.getElementById('experience').value,
-        skills: document.getElementById('skills').value,
+        skills: Array.from(document.querySelectorAll('input[name="skills[]"]:checked')).map(el => el.value),
         tools: Array.from(document.querySelectorAll('input[name="tools[]"]:checked')).map(el => el.value),
-        aboutYou: document.getElementById('aboutYou').value,
-        whyUs: document.getElementById('whyUs').value,
-        punished: document.querySelector('input[name="punished"]:checked')?.value,
-        punishmentDetails: document.getElementById('punishmentDetailsText').value,
-        situation1: document.getElementById('situation1').value,
-        situation2: document.getElementById('situation2').value,
-        situation3: document.getElementById('situation3').value
+        hoursWeek: document.getElementById('hoursWeek').value,
+        experience: document.getElementById('experience').value,
+        portfolio: document.getElementById('portfolio').value,
+        whyYou: document.getElementById('whyYou').value,
+        creative1: document.getElementById('creative1').value,
+        creative2: document.getElementById('creative2').value,
+        creative3: document.getElementById('creative3').value
       };
 
       // Coleta informações do usuário
@@ -906,8 +832,7 @@
                   modal.classList.remove('active');
                   document.querySelectorAll('input, textarea, select').forEach(el => el.value = '');
                   document.querySelectorAll('.char-counter span').forEach(el => el.textContent = '0');
-                  document.getElementById('punishmentDetails').style.display = 'none';
-                  document.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach(el => el.checked = false);
+                  document.querySelectorAll('input[type="checkbox"]').forEach(el => el.checked = false);
                   submitBtn.disabled = false;
                   submitBtn.style.pointerEvents = 'auto';
                 }, 3000);

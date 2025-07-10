@@ -3,26 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nexus Recruit | Sistema de Recrutamento Avançado</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <title>Nexus Recruit | Sistema de Recrutamento</title>
+  
+  <!-- Fontes -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap">
+  
+  <!-- CSS -->
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/animations.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap">
+  
+  <!-- Pré-carregamento -->
+  <link rel="preload" href="assets/js/core.js" as="script">
+  <link rel="preload" href="assets/js/analytics.js" as="script">
 </head>
 <body>
+  <!-- Tela de Carregamento Otimizada -->
   <div class="cyber-loader" id="cyberLoader">
-    <div class="loader-grid">
-      <div class="grid-cell"></div>
-      <div class="grid-cell"></div>
-      <div class="grid-cell"></div>
-      <div class="grid-cell"></div>
-    </div>
-    <div class="loader-text">INICIALIZANDO SISTEMA NEXUS RECRUIT</div>
-    <div class="loader-progress">
-      <div class="progress-bar" id="progressBar"></div>
+    <div class="loader-content">
+      <div class="loader-logo">NEXUS RECRUIT</div>
+      <div class="loader-animation">
+        <div class="hexagon"></div>
+      </div>
+      <div class="loader-progress">
+        <div class="progress-bar" id="progressBar"></div>
+        <div class="progress-text" id="progressText">0%</div>
+      </div>
+      <div class="loader-message" id="loaderMessage">Inicializando sistemas...</div>
     </div>
   </div>
 
+  <!-- Conteúdo Principal -->
   <main class="cyber-main hidden" id="mainContent">
     <header class="cyber-header">
       <div class="header-glitch" data-text="NEXUS RECRUIT">NEXUS RECRUIT</div>
@@ -30,7 +40,8 @@
     </header>
 
     <div class="cyber-grid">
-      <div class="cyber-card staff-card" data-augmented-ui="tl-clip tr-clip br-clip bl-clip border">
+      <!-- Card Staff -->
+      <div class="cyber-card staff-card">
         <div class="card-content">
           <div class="card-icon">🛡️</div>
           <h2 class="card-title">Equipe de Segurança</h2>
@@ -40,10 +51,10 @@
             <span class="btn-glow"></span>
           </div>
         </div>
-        <div class="card-particles" id="particles-1"></div>
       </div>
 
-      <div class="cyber-card employee-card" data-augmented-ui="tl-clip tr-clip br-clip bl-clip border">
+      <!-- Card Funcionários -->
+      <div class="cyber-card employee-card">
         <div class="card-content">
           <div class="card-icon">💼</div>
           <h2 class="card-title">Unidade Operacional</h2>
@@ -53,10 +64,10 @@
             <span class="btn-glow"></span>
           </div>
         </div>
-        <div class="card-particles" id="particles-2"></div>
       </div>
 
-      <div class="cyber-card design-card" data-augmented-ui="tl-clip tr-clip br-clip bl-clip border">
+      <!-- Card Design -->
+      <div class="cyber-card design-card">
         <div class="card-content">
           <div class="card-icon">🎨</div>
           <h2 class="card-title">Divisão Criativa</h2>
@@ -66,7 +77,6 @@
             <span class="btn-glow"></span>
           </div>
         </div>
-        <div class="card-particles" id="particles-3"></div>
       </div>
     </div>
 
@@ -80,26 +90,107 @@
         </div>
       </div>
       <div class="terminal-content" id="systemTerminal">
-        <p>> Inicializando módulos de segurança...</p>
-        <p>> Verificando credenciais de acesso...</p>
-        <p>> Conexão segura estabelecida...</p>
-        <p>> Bem-vindo(a) ao Nexus Recruit System</p>
+        <p>> Sistema Nexus Recruit inicializado</p>
+        <p>> Todos os módulos operacionais</p>
+        <p>> Pronto para receber comandos</p>
       </div>
     </div>
   </main>
 
-  <div class="cyber-alerts" id="systemAlerts"></div>
-
+  <!-- Scripts -->
   <script src="assets/js/core.js"></script>
   <script src="assets/js/analytics.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  
+  <!-- Inicialização Simplificada -->
   <script>
-    // Inicialização do sistema
-    document.addEventListener('DOMContentLoaded', () => {
-      initSystem();
-      startParticles();
-      loadUserData();
+    // Função para atualizar o carregamento
+    function updateProgress(percent, message) {
+      const progressBar = document.getElementById('progressBar');
+      const progressText = document.getElementById('progressText');
+      const loaderMessage = document.getElementById('loaderMessage');
+      
+      if (progressBar) progressBar.style.width = percent + '%';
+      if (progressText) progressText.textContent = percent + '%';
+      if (loaderMessage && message) loaderMessage.textContent = message;
+    }
+
+    // Simulação de carregamento
+    function simulateLoad() {
+      updateProgress(0, 'Verificando sistemas...');
+      
+      setTimeout(() => {
+        updateProgress(30, 'Carregando módulos...');
+        
+        setTimeout(() => {
+          updateProgress(70, 'Inicializando interface...');
+          
+          setTimeout(() => {
+            updateProgress(100, 'Sistema pronto!');
+            
+            // Transição para o conteúdo principal
+            setTimeout(() => {
+              const loader = document.getElementById('cyberLoader');
+              const mainContent = document.getElementById('mainContent');
+              
+              if (loader && mainContent) {
+                loader.style.opacity = '0';
+                
+                setTimeout(() => {
+                  loader.style.display = 'none';
+                  mainContent.classList.remove('hidden');
+                  mainContent.style.opacity = '1';
+                }, 500);
+              }
+            }, 500);
+          }, 1000);
+        }, 1000);
+      }, 500);
+    }
+
+    // Fallback caso o carregamento falhe
+    function loadFallback() {
+      const loader = document.getElementById('cyberLoader');
+      const mainContent = document.getElementById('mainContent');
+      
+      if (loader && mainContent) {
+        loader.style.display = 'none';
+        mainContent.classList.remove('hidden');
+      }
+    }
+
+    // Inicialização segura
+    document.addEventListener('DOMContentLoaded', function() {
+      // Verifica se o navegador suporta as features necessárias
+      const isSupported = 'querySelector' in document && 'addEventListener' in window;
+      
+      if (isSupported) {
+        simulateLoad();
+      } else {
+        loadFallback();
+      }
     });
+
+    // Timeout de segurança (5 segundos)
+    setTimeout(function() {
+      if (document.getElementById('cyberLoader') && 
+          document.getElementById('cyberLoader').style.display !== 'none') {
+        loadFallback();
+      }
+    }, 5000);
+
+    // Função de navegação
+    function navigateTo(page) {
+      // Animação de transição simples
+      const mainContent = document.getElementById('mainContent');
+      if (mainContent) {
+        mainContent.style.opacity = '0';
+        setTimeout(() => {
+          window.location.href = page + '.html';
+        }, 300);
+      } else {
+        window.location.href = page + '.html';
+      }
+    }
   </script>
 </body>
 </html>
